@@ -3,4 +3,4 @@ from realgamedetector import *
 
 games = loadGames('prod')
 realGames = filterRealGames(games.values())
-print len(realGames)
+print(len(list(realGames)))
