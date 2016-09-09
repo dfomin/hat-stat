@@ -5,7 +5,17 @@ class GameStat:
         self.game = game
 
     def game_id(self):
-        return self.game['id']
+        if 'id' in self.game:
+            return self.game['id']
+        else:
+            return ""
+
+    def words_for_pack(self, pack_id):
+        words = []
+        for _, word in self.game['words'].items():
+            if word['packid'] == pack_id:
+                words.append(word['word'])
+        return words
 
     def average_word_time(self):
         time = 0
@@ -14,11 +24,32 @@ class GameStat:
             for _, round_word in round['words'].items():
                 time += round_word['time']
                 words_count += 1
+        if words_count > 0:
+            return time / words_count
+        else:
+            return time
 
-        return time / words_count
+    def average_word_guess_time(self):
+        time = 0
+        words_count = 0
+        for _, round in self.game['rounds'].items():
+            for _, round_word in round['words'].items():
+                if round_word['guessed']:
+                    time += round_word['time']
+                    words_count += 1
+        if words_count > 0:
+            return time / words_count
+        else:
+            return time
+
+    def skipped_words(self):
+        words_count = 0
+        for _, round in self.game['rounds'].items():
+            words_count += len(round['skipped'].items())
+        return words_count
 
     def version(self):
-        if self.game_id().find('.') != -1:
+        if self.game_id() == "" or self.game_id().find('.') != -1:
             return "1.0"
         else:
             return "1.1"
