@@ -5,19 +5,21 @@ from collections import defaultdict
 from operator import itemgetter
 
 games = load_games('prod')
-real_games = filter_real_games(games.values())
-# real_games = games.values()
+# real_games = filter_real_games(games.values())
+real_games = games.values()
 # print(len(list(realGames)))
 
 words_stat = defaultdict(int)
+device_words = {}
 for game in real_games:
     game_stat = GameStat(game)
-    if game_stat.version() == "1.1":
-        pass
-#        print(str(game_stat.game_id()) + " " +
-#              str(game_stat.average_word_time()) + " " +
-#              str(game_stat.skipped_words()))
+    device_id = game['deviceid']
+    if device_id not in device_words:
+        device_words[device_id] = set()
     for word in game_stat.words_for_pack(0):
+        device_words[device_id].add(word)
+for _, words in device_words.items():
+    for word in words:
         if word in words_stat:
             words_stat[word] += 1
         else:
