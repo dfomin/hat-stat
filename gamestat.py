@@ -10,6 +10,18 @@ class GameStat:
         else:
             return ""
 
+    def check_word_from_pack(self, word, pack_id):
+        for _, game_word in self.game['words'].items():
+            if game_word['word'] == word and game_word['packid'] == pack_id:
+                return True
+        return False
+
+    def check_word(self, word):
+        for _, game_word in self.game['words'].items():
+            if game_word['word'] == word:
+                return True
+        return False
+
     def words_for_pack(self, pack_id):
         words = []
         for _, word in self.game['words'].items():

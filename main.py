@@ -1,12 +1,12 @@
-from dbprovider import *
+from gamestatmanager import GameStatManager
 from realgamedetector import *
 from gamestat import *
 from collections import defaultdict
 from operator import itemgetter
 
-games = load_games('prod')
-# real_games = filter_real_games(games.values())
-real_games = games.values()
+manager = GameStatManager('prod')
+real_games = filter_real_games(manager.games.values())
+# real_games = games.values()
 # print(len(list(realGames)))
 
 words_stat = defaultdict(int)
