@@ -7,7 +7,7 @@ from operator import itemgetter
 manager = GameStatManager('prod')
 real_games = filter_real_games(manager.games.values())
 # real_games = games.values()
-# print(len(list(realGames)))
+print(len(list(real_games)))
 
 words_stat = defaultdict(int)
 device_words = {}
@@ -25,5 +25,5 @@ for _, words in device_words.items():
         else:
             words_stat[word] = 1
 words_stat = sorted(words_stat.items(), key=lambda k_v: k_v[1], reverse=True)
-for word, value in words_stat:
-    print(str(value) + ": " + word)
+# for word, value in words_stat:
+#    print(str(value) + ": " + word)
