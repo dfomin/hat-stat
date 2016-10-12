@@ -22,6 +22,12 @@ class GameStat:
                 return True
         return False
 
+    def word_packs(self):
+        packs = set()
+        for _, word in self.game['words'].items():
+            packs.add(word['packid'])
+        return packs
+
     def words_for_pack(self, pack_id):
         words = []
         for _, word in self.game['words'].items():
