@@ -8,5 +8,11 @@
 
 import Foundation
 
-print("Hello, World!")
+let objects = DBDumpFileReader.readFile(filePath: "/Users/dfomin/projects/hat-stat/games.json")
+var jsonObjects = [JSON]()
+for object in objects {
+    let json = JSON(parseJSON: object)
+    jsonObjects.append(json)
+}
 
+print(jsonObjects.count)

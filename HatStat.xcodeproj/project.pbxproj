@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		07DE6E761ED7528F000C4FF4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E751ED7528F000C4FF4 /* main.swift */; };
+		07DE6E7D1ED7588D000C4FF4 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E7C1ED7588D000C4FF4 /* SwiftyJSON.swift */; };
+		07DE6E7F1ED75915000C4FF4 /* DBDumpFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E7E1ED75915000C4FF4 /* DBDumpFileReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		07DE6E721ED7528F000C4FF4 /* HatStat */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HatStat; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DE6E751ED7528F000C4FF4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		07DE6E7C1ED7588D000C4FF4 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		07DE6E7E1ED75915000C4FF4 /* DBDumpFileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBDumpFileReader.swift; sourceTree = "<group>"; };
+		251461574F71D40283D92351 /* Pods-HatStat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatStat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HatStat/Pods-HatStat.debug.xcconfig"; sourceTree = "<group>"; };
+		CD95D32D072B8030F62F4AAB /* Pods-HatStat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatStat.release.xcconfig"; path = "Pods/Target Support Files/Pods-HatStat/Pods-HatStat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,8 @@
 			children = (
 				07DE6E741ED7528F000C4FF4 /* HatStat */,
 				07DE6E731ED7528F000C4FF4 /* Products */,
+				228EAB55F7ABF8AB40293973 /* Pods */,
+				F4C3FFCD16E1C06CBB1A1DE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +65,27 @@
 		07DE6E741ED7528F000C4FF4 /* HatStat */ = {
 			isa = PBXGroup;
 			children = (
+				07DE6E7C1ED7588D000C4FF4 /* SwiftyJSON.swift */,
 				07DE6E751ED7528F000C4FF4 /* main.swift */,
+				07DE6E7E1ED75915000C4FF4 /* DBDumpFileReader.swift */,
 			);
 			path = HatStat;
+			sourceTree = "<group>";
+		};
+		228EAB55F7ABF8AB40293973 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				251461574F71D40283D92351 /* Pods-HatStat.debug.xcconfig */,
+				CD95D32D072B8030F62F4AAB /* Pods-HatStat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F4C3FFCD16E1C06CBB1A1DE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +148,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				07DE6E761ED7528F000C4FF4 /* main.swift in Sources */,
+				07DE6E7F1ED75915000C4FF4 /* DBDumpFileReader.swift in Sources */,
+				07DE6E7D1ED7588D000C4FF4 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +248,7 @@
 		};
 		07DE6E7A1ED7528F000C4FF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 251461574F71D40283D92351 /* Pods-HatStat.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4GXW7T6UYJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -229,6 +258,7 @@
 		};
 		07DE6E7B1ED7528F000C4FF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD95D32D072B8030F62F4AAB /* Pods-HatStat.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4GXW7T6UYJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -255,6 +285,7 @@
 				07DE6E7B1ED7528F000C4FF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
