@@ -2,3 +2,5 @@
 *.orig
 *.xcuserdatad
 project.xcworkspace
+games.json
+rounds.json
