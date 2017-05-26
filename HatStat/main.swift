@@ -8,11 +8,24 @@
 
 import Foundation
 
-let objects = DBDumpFileReader.readFile(filePath: "/Users/dfomin/projects/hat-stat/games.json")
-var jsonObjects = [JSON]()
-for object in objects {
-    let json = JSON(parseJSON: object)
-    jsonObjects.append(json)
+var games = [Game]()
+var jsonGames = DBDumpLoader.loadGames()
+for jsonGame in jsonGames {
+    if let game = Game(json: jsonGame) {
+        games.append(game)
+    }
 }
 
-print(jsonObjects.count)
+jsonGames.removeAll()
+
+var rounds = [Round]()
+var jsonRounds = DBDumpLoader.loadRounds()
+for jsonRound in jsonRounds {
+    if let round = Round(json: jsonRound) {
+        rounds.append(round)
+    }
+}
+
+jsonRounds.removeAll()
+
+print("\(games.count) \(rounds.count)")
