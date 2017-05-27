@@ -14,6 +14,26 @@ class Game {
     let deviceId: String
     let words: [Word]
     let teams: [Team]
+    var rounds = [Round]()
+    
+    var averageWordTime: Double {
+        get {
+            let times = rounds.flatMap{ $0.roundWords }.flatMap{ $0.time }
+            return times.isEmpty ? 0 : times.reduce(0, +) / Double(times.count)
+        }
+    }
+    
+    var guessedWords: Int {
+        get {
+            return rounds.flatMap{ $0.roundWords }.filter{ $0.state == .guessed }.count
+        }
+    }
+    
+    var deletedWords: Int {
+        get {
+            return rounds.flatMap{ $0.roundWords }.filter{ $0.state == .deleted }.count
+        }
+    }
     
     init?(json: JSON) {
         if let id = json["id"].string {
@@ -43,5 +63,20 @@ class Game {
         }
         
         self.teams = teams
+    }
+    
+    func fixRounds() -> Bool {
+        rounds.sort{ $0.roundNumber < $1.roundNumber }
+        for (i, round) in rounds.enumerated() {
+            if i != round.roundNumber {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    func checkForReal() -> Bool {
+        return averageWordTime > 2.0 && (guessedWords + deletedWords >= words.count) && words.count >= 10
     }
 }

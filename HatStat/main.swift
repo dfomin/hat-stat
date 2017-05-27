@@ -8,24 +8,34 @@
 
 import Foundation
 
-var games = [Game]()
+var games = [String: Game]()
 var jsonGames = DBDumpLoader.loadGames()
 for jsonGame in jsonGames {
     if let game = Game(json: jsonGame) {
-        games.append(game)
+        games[game.id] = game
     }
 }
 
 jsonGames.removeAll()
 
-var rounds = [Round]()
 var jsonRounds = DBDumpLoader.loadRounds()
 for jsonRound in jsonRounds {
     if let round = Round(json: jsonRound) {
-        rounds.append(round)
+        games[round.gameId]?.rounds.append(round)
     }
 }
 
 jsonRounds.removeAll()
 
-print("\(games.count) \(rounds.count)")
+var corruptedGames = [String]()
+for game in games.values {
+    if !game.fixRounds() || !game.checkForReal() {
+        corruptedGames.append(game.id)
+    }
+}
+
+for id in corruptedGames {
+    games[id] = nil
+}
+
+print("\(games.count)")

@@ -29,7 +29,7 @@ def check_game(game):
 
     average_time = time / all_words if all_words > 0 else 100
 
-    if guessed_words == game_words_count and average_time > 2 and game_words_count > 10:
+    if guessed_words >= game_words_count and average_time > 2 and game_words_count >= 10:
         return True
     else:
         return False
