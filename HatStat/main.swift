@@ -56,9 +56,32 @@ func countWordStat(games: [String: Game]) {
     }
 }
 
+func countWordsGuessTime(games: [String: Game], forPack packId: Int) {
+    let wordGuessTime = WordGuessTime()
+    for game in games.values {
+        for round in game.rounds {
+            for roundWord in round.roundWords {
+                if roundWord.wordId < game.words.count {
+                    if game.words[roundWord.wordId].packId == packId || packId == -1 {
+                        wordGuessTime.add(word: game.words[roundWord.wordId].word, time: roundWord.time, guessed: roundWord.state == .guessed)
+                    }
+                }
+            }
+        }
+    }
+    
+    for stat in wordGuessTime.fullStat() {
+        print("\(stat.word): \(stat.average) \(stat.count)")
+    }
+}
+
 func main() {
     let games = loadGames()
     print("real games: \(games.count)")
+    
+    //countWordStat(games: games)
+    
+    //countWordsGuessTime(games: games, forPack: 6)
 }
 
 main()

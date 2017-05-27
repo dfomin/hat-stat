@@ -54,7 +54,7 @@ class Game {
             words.append(Word(id: Int(jsonId)!, json: jsonWord))
         }
         
-        self.words = words
+        self.words = words.sorted{ $0.id < $1.id }
         
         var teams = [Team]()
         let jsonTeams = json["teams"]

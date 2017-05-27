@@ -20,6 +20,7 @@
 		07DE6E8F1ED8B0FF000C4FF4 /* RoundWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E8E1ED8B0FF000C4FF4 /* RoundWord.swift */; };
 		07DE6E911ED8B14E000C4FF4 /* GuessingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E901ED8B14E000C4FF4 /* GuessingState.swift */; };
 		07DE6E931ED9F9E8000C4FF4 /* WordPopularity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E921ED9F9E8000C4FF4 /* WordPopularity.swift */; };
+		07DE6E951EDA122C000C4FF4 /* WordGuessTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E941EDA122C000C4FF4 /* WordGuessTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,7 @@
 		07DE6E8E1ED8B0FF000C4FF4 /* RoundWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundWord.swift; sourceTree = "<group>"; };
 		07DE6E901ED8B14E000C4FF4 /* GuessingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessingState.swift; sourceTree = "<group>"; };
 		07DE6E921ED9F9E8000C4FF4 /* WordPopularity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPopularity.swift; sourceTree = "<group>"; };
+		07DE6E941EDA122C000C4FF4 /* WordGuessTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordGuessTime.swift; sourceTree = "<group>"; };
 		251461574F71D40283D92351 /* Pods-HatStat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatStat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HatStat/Pods-HatStat.debug.xcconfig"; sourceTree = "<group>"; };
 		CD95D32D072B8030F62F4AAB /* Pods-HatStat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatStat.release.xcconfig"; path = "Pods/Target Support Files/Pods-HatStat/Pods-HatStat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 				07DE6E8E1ED8B0FF000C4FF4 /* RoundWord.swift */,
 				07DE6E901ED8B14E000C4FF4 /* GuessingState.swift */,
 				07DE6E921ED9F9E8000C4FF4 /* WordPopularity.swift */,
+				07DE6E941EDA122C000C4FF4 /* WordGuessTime.swift */,
 			);
 			path = HatStat;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				07DE6E7F1ED75915000C4FF4 /* DBDumpFileReader.swift in Sources */,
 				07DE6E891ED8AC7D000C4FF4 /* Team.swift in Sources */,
 				07DE6E911ED8B14E000C4FF4 /* GuessingState.swift in Sources */,
+				07DE6E951EDA122C000C4FF4 /* WordGuessTime.swift in Sources */,
 				07DE6E871ED8ABE4000C4FF4 /* Player.swift in Sources */,
 				07DE6E7D1ED7588D000C4FF4 /* SwiftyJSON.swift in Sources */,
 				07DE6E851ED8A9D8000C4FF4 /* Word.swift in Sources */,
