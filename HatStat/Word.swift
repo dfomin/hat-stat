@@ -22,7 +22,7 @@ class Word {
         word = json["word"].stringValue
         level = json["level"].doubleValue
         badItalic = json["baditalic"].boolValue
-        packId = json["packId"].intValue
+        packId = json["packid"].intValue
         usage = json["usage"].intValue
     }
 }
