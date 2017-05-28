@@ -56,7 +56,7 @@ func countWordStat(games: [String: Game]) {
     }
 }
 
-func countWordsGuessTime(games: [String: Game], forPack packId: Int) {
+func countWordsGuessTime(games: [String: Game], forPack packId: Int, countLimit: Int) {
     let wordGuessTime = WordGuessTime()
     for game in games.values {
         for round in game.rounds {
@@ -70,8 +70,35 @@ func countWordsGuessTime(games: [String: Game], forPack packId: Int) {
         }
     }
     
+    var level = [String: Double]()
+    for game in games.values {
+        for word in game.words {
+            level[word.word] = word.level
+        }
+    }
+    
+    let levelDetector = WordLevelAverageTime()
+    
     for stat in wordGuessTime.fullStat() {
-        print("\(stat.word): \(stat.average) \(stat.count)")
+        if stat.count >= countLimit || countLimit == -1 {
+            //print("\(stat.word): \(stat.average) \(level[stat.word]!)")
+            levelDetector.add(word: stat.word, level: level[stat.word]!, averageTime: stat.average)
+        }
+    }
+    
+    /*print("\(levelDetector.words.count)")
+    for i in 0...4 {
+        let filtered = levelDetector.words.filter{ abs(Int($1.level) - Int($1.timeLevel)) == i }
+        print("\(i) \(filtered.count)")
+        for word in filtered {
+            print("\(word.key) \(word.value.level) \(word.value.timeLevel)")
+        }
+    }*/
+    
+    for stat in levelDetector.words {
+        if level[stat.key]! == 0 {
+            print("\(stat.key) \(stat.value.timeLevel)")
+        }
     }
 }
 
@@ -81,7 +108,7 @@ func main() {
     
     //countWordStat(games: games)
     
-    //countWordsGuessTime(games: games, forPack: 6)
+    //countWordsGuessTime(games: games, forPack: 0, countLimit: -1)
 }
 
 main()
