@@ -113,6 +113,16 @@ func analyzeStages(games: [String: Game]) {
     }
 }
 
+func analyzeBadItalic(games: [String: Game]) {
+    let analyzer = BadItalicAnalyzer()
+    for game in games.values {
+        analyzer.process(game: game)
+    }
+    
+    print("on: \(analyzer.enableStat.on), off: \(analyzer.enableStat.off)")
+    print("disabled: \(analyzer.disabledInProcess)")
+}
+
 func main() {
     let games = loadGames()
     print("real games: \(games.count)")
@@ -121,7 +131,9 @@ func main() {
     
     //countWordsGuessTime(games: games, forPack: 0, countLimit: -1)
     
-    analyzeStages(games: games)
+    //analyzeStages(games: games)
+    
+    analyzeBadItalic(games: games)
 }
 
 main()

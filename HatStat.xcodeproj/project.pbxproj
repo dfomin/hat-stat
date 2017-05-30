@@ -23,6 +23,7 @@
 		07DE6E951EDA122C000C4FF4 /* WordGuessTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E941EDA122C000C4FF4 /* WordGuessTime.swift */; };
 		07DE6E971EDAC403000C4FF4 /* WordLevelAverageTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E961EDAC403000C4FF4 /* WordLevelAverageTime.swift */; };
 		07DE6E9B1EDE0E36000C4FF4 /* StageAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E9A1EDE0E36000C4FF4 /* StageAnalyzer.swift */; };
+		07DE6E9D1EDE1106000C4FF4 /* BadItalicAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E9C1EDE1106000C4FF4 /* BadItalicAnalyzer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +56,7 @@
 		07DE6E941EDA122C000C4FF4 /* WordGuessTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordGuessTime.swift; sourceTree = "<group>"; };
 		07DE6E961EDAC403000C4FF4 /* WordLevelAverageTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordLevelAverageTime.swift; sourceTree = "<group>"; };
 		07DE6E9A1EDE0E36000C4FF4 /* StageAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageAnalyzer.swift; sourceTree = "<group>"; };
+		07DE6E9C1EDE1106000C4FF4 /* BadItalicAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadItalicAnalyzer.swift; sourceTree = "<group>"; };
 		251461574F71D40283D92351 /* Pods-HatStat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatStat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HatStat/Pods-HatStat.debug.xcconfig"; sourceTree = "<group>"; };
 		CD95D32D072B8030F62F4AAB /* Pods-HatStat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatStat.release.xcconfig"; path = "Pods/Target Support Files/Pods-HatStat/Pods-HatStat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +109,7 @@
 				07DE6E941EDA122C000C4FF4 /* WordGuessTime.swift */,
 				07DE6E961EDAC403000C4FF4 /* WordLevelAverageTime.swift */,
 				07DE6E9A1EDE0E36000C4FF4 /* StageAnalyzer.swift */,
+				07DE6E9C1EDE1106000C4FF4 /* BadItalicAnalyzer.swift */,
 			);
 			path = HatStat;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				07DE6E911ED8B14E000C4FF4 /* GuessingState.swift in Sources */,
 				07DE6E951EDA122C000C4FF4 /* WordGuessTime.swift in Sources */,
 				07DE6E871ED8ABE4000C4FF4 /* Player.swift in Sources */,
+				07DE6E9D1EDE1106000C4FF4 /* BadItalicAnalyzer.swift in Sources */,
 				07DE6E7D1ED7588D000C4FF4 /* SwiftyJSON.swift in Sources */,
 				07DE6E851ED8A9D8000C4FF4 /* Word.swift in Sources */,
 			);
