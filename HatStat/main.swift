@@ -102,6 +102,17 @@ func countWordsGuessTime(games: [String: Game], forPack packId: Int, countLimit:
     }
 }
 
+func analyzeStages(games: [String: Game]) {
+    let analyzer = StageAnalyzer()
+    for game in games.values {
+        analyzer.process(game: game)
+    }
+    
+    for key in analyzer.stages.keys.sorted() {
+        print("\(key): \(analyzer.stages[key]!)")
+    }
+}
+
 func main() {
     let games = loadGames()
     print("real games: \(games.count)")
@@ -109,6 +120,8 @@ func main() {
     //countWordStat(games: games)
     
     //countWordsGuessTime(games: games, forPack: 0, countLimit: -1)
+    
+    analyzeStages(games: games)
 }
 
 main()
