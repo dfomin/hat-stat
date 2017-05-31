@@ -123,6 +123,17 @@ func analyzeBadItalic(games: [String: Game]) {
     print("disabled: \(analyzer.disabledInProcess)")
 }
 
+func countPackUsage(games: [String: Game]) {
+    let packUsage = PackUsage()
+    for game in games.values {
+        packUsage.process(game: game)
+    }
+    
+    for packId in packUsage.packStat.keys.sorted() {
+        print("\(packId): \(packUsage.packStat[packId]!)")
+    }
+}
+
 func main() {
     let games = loadGames()
     print("real games: \(games.count)")
@@ -133,7 +144,9 @@ func main() {
     
     //analyzeStages(games: games)
     
-    analyzeBadItalic(games: games)
+    //analyzeBadItalic(games: games)
+    
+    countPackUsage(games: games)
 }
 
 main()

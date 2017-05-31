@@ -24,6 +24,7 @@
 		07DE6E971EDAC403000C4FF4 /* WordLevelAverageTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E961EDAC403000C4FF4 /* WordLevelAverageTime.swift */; };
 		07DE6E9B1EDE0E36000C4FF4 /* StageAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E9A1EDE0E36000C4FF4 /* StageAnalyzer.swift */; };
 		07DE6E9D1EDE1106000C4FF4 /* BadItalicAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E9C1EDE1106000C4FF4 /* BadItalicAnalyzer.swift */; };
+		07DE6E9F1EDEB869000C4FF4 /* PackUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E9E1EDEB869000C4FF4 /* PackUsage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +58,7 @@
 		07DE6E961EDAC403000C4FF4 /* WordLevelAverageTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordLevelAverageTime.swift; sourceTree = "<group>"; };
 		07DE6E9A1EDE0E36000C4FF4 /* StageAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageAnalyzer.swift; sourceTree = "<group>"; };
 		07DE6E9C1EDE1106000C4FF4 /* BadItalicAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadItalicAnalyzer.swift; sourceTree = "<group>"; };
+		07DE6E9E1EDEB869000C4FF4 /* PackUsage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackUsage.swift; sourceTree = "<group>"; };
 		251461574F71D40283D92351 /* Pods-HatStat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatStat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HatStat/Pods-HatStat.debug.xcconfig"; sourceTree = "<group>"; };
 		CD95D32D072B8030F62F4AAB /* Pods-HatStat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatStat.release.xcconfig"; path = "Pods/Target Support Files/Pods-HatStat/Pods-HatStat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 				07DE6E961EDAC403000C4FF4 /* WordLevelAverageTime.swift */,
 				07DE6E9A1EDE0E36000C4FF4 /* StageAnalyzer.swift */,
 				07DE6E9C1EDE1106000C4FF4 /* BadItalicAnalyzer.swift */,
+				07DE6E9E1EDEB869000C4FF4 /* PackUsage.swift */,
 			);
 			path = HatStat;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				07DE6E8F1ED8B0FF000C4FF4 /* RoundWord.swift in Sources */,
 				07DE6E9B1EDE0E36000C4FF4 /* StageAnalyzer.swift in Sources */,
 				07DE6E7F1ED75915000C4FF4 /* DBDumpFileReader.swift in Sources */,
+				07DE6E9F1EDEB869000C4FF4 /* PackUsage.swift in Sources */,
 				07DE6E891ED8AC7D000C4FF4 /* Team.swift in Sources */,
 				07DE6E911ED8B14E000C4FF4 /* GuessingState.swift in Sources */,
 				07DE6E951EDA122C000C4FF4 /* WordGuessTime.swift in Sources */,
