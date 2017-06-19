@@ -18,6 +18,10 @@ class DBDumpLoader {
         return loadObjects(path: "/Users/dfomin/projects/hat-stat/rounds.json")
     }
     
+    static func loadUsers() -> [JSON] {
+        return loadObjects(path: "/Users/dfomin/projects/hat-stat/users.json")
+    }
+    
     private static func loadObjects(path: String) -> [JSON] {
         let objects = DBDumpFileReader.readFile(filePath: path)
         var jsonObjects = [JSON]()

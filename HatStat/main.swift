@@ -42,6 +42,18 @@ func loadGames() -> [String: Game] {
     return games
 }
 
+func loadUsers() -> [User] {
+    var users = [User]()
+    let jsonUsers = DBDumpLoader.loadUsers()
+    for jsonUser in jsonUsers {
+        if let user = User(json: jsonUser) {
+            users.append(user)
+        }
+    }
+    
+    return users
+}
+
 func countWordStat(games: [String: Game]) {
     let wordPopularity = WordPopularity()
     for game in games.values {
@@ -134,8 +146,19 @@ func countPackUsage(games: [String: Game]) {
     }
 }
 
+func countUsers(users: [User]) {
+    let manager = UserManager()
+    for user in users {
+        manager.add(user: user)
+    }
+    
+    print("users: \(manager.uniqueUsers)")
+}
+
 func main() {
     let games = loadGames()
+    let users = loadUsers()
+    
     print("real games: \(games.count)")
     
     //countWordStat(games: games)
@@ -146,7 +169,9 @@ func main() {
     
     //analyzeBadItalic(games: games)
     
-    countPackUsage(games: games)
+    //countPackUsage(games: games)
+    
+    countUsers(users: users)
 }
 
 main()

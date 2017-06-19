@@ -25,6 +25,8 @@
 		07DE6E9B1EDE0E36000C4FF4 /* StageAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E9A1EDE0E36000C4FF4 /* StageAnalyzer.swift */; };
 		07DE6E9D1EDE1106000C4FF4 /* BadItalicAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E9C1EDE1106000C4FF4 /* BadItalicAnalyzer.swift */; };
 		07DE6E9F1EDEB869000C4FF4 /* PackUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E9E1EDEB869000C4FF4 /* PackUsage.swift */; };
+		07DE6EA11EDF0E7A000C4FF4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6EA01EDF0E7A000C4FF4 /* User.swift */; };
+		07DE6EA31EDF1039000C4FF4 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6EA21EDF1039000C4FF4 /* UserManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +61,8 @@
 		07DE6E9A1EDE0E36000C4FF4 /* StageAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageAnalyzer.swift; sourceTree = "<group>"; };
 		07DE6E9C1EDE1106000C4FF4 /* BadItalicAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadItalicAnalyzer.swift; sourceTree = "<group>"; };
 		07DE6E9E1EDEB869000C4FF4 /* PackUsage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackUsage.swift; sourceTree = "<group>"; };
+		07DE6EA01EDF0E7A000C4FF4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		07DE6EA21EDF1039000C4FF4 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		251461574F71D40283D92351 /* Pods-HatStat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatStat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HatStat/Pods-HatStat.debug.xcconfig"; sourceTree = "<group>"; };
 		CD95D32D072B8030F62F4AAB /* Pods-HatStat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HatStat.release.xcconfig"; path = "Pods/Target Support Files/Pods-HatStat/Pods-HatStat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +117,8 @@
 				07DE6E9A1EDE0E36000C4FF4 /* StageAnalyzer.swift */,
 				07DE6E9C1EDE1106000C4FF4 /* BadItalicAnalyzer.swift */,
 				07DE6E9E1EDEB869000C4FF4 /* PackUsage.swift */,
+				07DE6EA01EDF0E7A000C4FF4 /* User.swift */,
+				07DE6EA21EDF1039000C4FF4 /* UserManager.swift */,
 			);
 			path = HatStat;
 			sourceTree = "<group>";
@@ -210,6 +216,8 @@
 				07DE6E9D1EDE1106000C4FF4 /* BadItalicAnalyzer.swift in Sources */,
 				07DE6E7D1ED7588D000C4FF4 /* SwiftyJSON.swift in Sources */,
 				07DE6E851ED8A9D8000C4FF4 /* Word.swift in Sources */,
+				07DE6EA31EDF1039000C4FF4 /* UserManager.swift in Sources */,
+				07DE6EA11EDF0E7A000C4FF4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
