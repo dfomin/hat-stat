@@ -14,7 +14,7 @@ class Game {
     let deviceId: String
     let words: [Word]
     let teams: [Team]
-    var rounds = [Round]()
+    private(set) var rounds = [Round]()
     
     var averageWordTime: Double {
         get {
@@ -63,6 +63,17 @@ class Game {
         }
         
         self.teams = teams
+    }
+    
+    func addRound(_ round: Round) {
+        for storedRound in rounds {
+            if storedRound.roundNumber == round.roundNumber {
+                //print("\(id) \(round.roundNumber)")
+                return
+            }
+        }
+        
+        rounds.append(round)
     }
     
     func fixRounds() -> Bool {

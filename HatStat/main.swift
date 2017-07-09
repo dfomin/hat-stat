@@ -8,7 +8,7 @@
 
 import Foundation
 
-func loadGames() -> [String: Game] {
+func loadGames(allGames: Bool = false) -> [String: Game] {
     var games = [String: Game]()
     var jsonGames = DBDumpLoader.loadGames()
     for jsonGame in jsonGames {
@@ -22,21 +22,23 @@ func loadGames() -> [String: Game] {
     var jsonRounds = DBDumpLoader.loadRounds()
     for jsonRound in jsonRounds {
         if let round = Round(json: jsonRound) {
-            games[round.gameId]?.rounds.append(round)
+            games[round.gameId]?.addRound(round)
         }
     }
     
     jsonRounds.removeAll()
     
-    var corruptedGames = [String]()
-    for game in games.values {
-        if !game.fixRounds() || !game.checkForReal() {
-            corruptedGames.append(game.id)
+    if !allGames {
+        var corruptedGames = [String]()
+        for game in games.values {
+            if !game.fixRounds() || !game.checkForReal() {
+                corruptedGames.append(game.id)
+            }
         }
-    }
-    
-    for id in corruptedGames {
-        games[id] = nil
+        
+        for id in corruptedGames {
+            games[id] = nil
+        }
     }
     
     return games
@@ -46,12 +48,28 @@ func loadUsers() -> [User] {
     var users = [User]()
     let jsonUsers = DBDumpLoader.loadUsers()
     for jsonUser in jsonUsers {
-        if let user = User(json: jsonUser) {
-            users.append(user)
-        }
+        let user = User(json: jsonUser)
+        users.append(user)
     }
     
     return users
+}
+
+func loadPacks() -> [Int: Pack] {
+    var packs = [Int: Pack]()
+    let jsonPacks = DBDumpLoader.loadPacks()
+    for jsonPack in jsonPacks {
+        if jsonPack.isEmpty {
+            continue
+        }
+        
+        let pack = Pack(json: jsonPack)
+        packs[pack.id] = pack
+        
+        print(pack.id)
+    }
+    
+    return packs
 }
 
 func countWordStat(games: [String: Game]) {
@@ -72,10 +90,16 @@ func countWordsGuessTime(games: [String: Game], forPack packId: Int, countLimit:
     let wordGuessTime = WordGuessTime()
     for game in games.values {
         for round in game.rounds {
-            for roundWord in round.roundWords {
-                if roundWord.wordId < game.words.count {
-                    if game.words[roundWord.wordId].packId == packId || packId == -1 {
-                        wordGuessTime.add(word: game.words[roundWord.wordId].word, time: roundWord.time, guessed: roundWord.state == .guessed)
+            if round.stage == 0 {
+                for roundWord in round.roundWords {
+                    if roundWord.wordId < game.words.count {
+                        if game.words[roundWord.wordId].badItalic {
+                            continue
+                        }
+                        
+                        if game.words[roundWord.wordId].packId == packId || packId == -1 {
+                            wordGuessTime.add(word: game.words[roundWord.wordId].word, time: roundWord.time, guessed: roundWord.state == .guessed)
+                        }
                     }
                 }
             }
@@ -98,18 +122,19 @@ func countWordsGuessTime(games: [String: Game], forPack packId: Int, countLimit:
         }
     }
     
-    /*print("\(levelDetector.words.count)")
+    print("\(levelDetector.words.count)")
     for i in 0...4 {
         let filtered = levelDetector.words.filter{ abs(Int($1.level) - Int($1.timeLevel)) == i }
         print("\(i) \(filtered.count)")
         for word in filtered {
             print("\(word.key) \(word.value.level) \(word.value.timeLevel)")
+            //print("\(word.key) \(word.value.timeLevel)")
         }
-    }*/
+    }
     
     for stat in levelDetector.words {
         if level[stat.key]! == 0 {
-            print("\(stat.key) \(stat.value.timeLevel)")
+            //print("\(stat.key) \(stat.value.timeLevel)")
         }
     }
 }
@@ -155,15 +180,31 @@ func countUsers(users: [User]) {
     print("users: \(manager.uniqueUsers)")
 }
 
+func checkPackWords(games: [Game], packs: [Int: Pack]) {
+    for game in games {
+        for word in game.words {
+            let packId = word.packId
+            if packId == 13 {
+                let pack = packs[packId]!
+                if pack.words[word.word] == nil {
+                    print("\(word.word) \(packId) \(game.id)")
+                }
+            }
+        }
+    }
+}
+
 func main() {
-    let games = loadGames()
+    let games = loadGames(allGames: true)
     let users = loadUsers()
+    let packs = loadPacks()
     
     print("real games: \(games.count)")
+    countUsers(users: users)
     
     //countWordStat(games: games)
     
-    //countWordsGuessTime(games: games, forPack: 0, countLimit: -1)
+    //countWordsGuessTime(games: games, forPack: 13, countLimit: -1)
     
     //analyzeStages(games: games)
     
@@ -171,7 +212,7 @@ func main() {
     
     //countPackUsage(games: games)
     
-    countUsers(users: users)
+    checkPackWords(games: Array(games.values), packs: packs)
 }
 
 main()

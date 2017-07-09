@@ -19,7 +19,7 @@ class User {
     var pushToken: String
     var timestamp: Int
     
-    init?(json: JSON) {
+    init(json: JSON) {
         deviceId = json["deviceid"].stringValue
         deviceModel = json["deviceModel"].stringValue
         device = json["device"].stringValue

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070864931F12974B00601683 /* Pack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070864921F12974B00601683 /* Pack.swift */; };
+		070864951F1297E700601683 /* PackWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070864941F1297E700601683 /* PackWord.swift */; };
 		07DE6E761ED7528F000C4FF4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E751ED7528F000C4FF4 /* main.swift */; };
 		07DE6E7D1ED7588D000C4FF4 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E7C1ED7588D000C4FF4 /* SwiftyJSON.swift */; };
 		07DE6E7F1ED75915000C4FF4 /* DBDumpFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE6E7E1ED75915000C4FF4 /* DBDumpFileReader.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		070864921F12974B00601683 /* Pack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pack.swift; sourceTree = "<group>"; };
+		070864941F1297E700601683 /* PackWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackWord.swift; sourceTree = "<group>"; };
 		07DE6E721ED7528F000C4FF4 /* HatStat */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HatStat; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DE6E751ED7528F000C4FF4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		07DE6E7C1ED7588D000C4FF4 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				07DE6E9E1EDEB869000C4FF4 /* PackUsage.swift */,
 				07DE6EA01EDF0E7A000C4FF4 /* User.swift */,
 				07DE6EA21EDF1039000C4FF4 /* UserManager.swift */,
+				070864921F12974B00601683 /* Pack.swift */,
+				070864941F1297E700601683 /* PackWord.swift */,
 			);
 			path = HatStat;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 			files = (
 				07DE6E811ED826BE000C4FF4 /* DBDumpLoader.swift in Sources */,
 				07DE6E971EDAC403000C4FF4 /* WordLevelAverageTime.swift in Sources */,
+				070864951F1297E700601683 /* PackWord.swift in Sources */,
 				07DE6E8B1ED8AF58000C4FF4 /* Round.swift in Sources */,
 				07DE6E931ED9F9E8000C4FF4 /* WordPopularity.swift in Sources */,
 				07DE6E831ED8A7FF000C4FF4 /* Game.swift in Sources */,
@@ -209,6 +216,7 @@
 				07DE6E9B1EDE0E36000C4FF4 /* StageAnalyzer.swift in Sources */,
 				07DE6E7F1ED75915000C4FF4 /* DBDumpFileReader.swift in Sources */,
 				07DE6E9F1EDEB869000C4FF4 /* PackUsage.swift in Sources */,
+				070864931F12974B00601683 /* Pack.swift in Sources */,
 				07DE6E891ED8AC7D000C4FF4 /* Team.swift in Sources */,
 				07DE6E911ED8B14E000C4FF4 /* GuessingState.swift in Sources */,
 				07DE6E951EDA122C000C4FF4 /* WordGuessTime.swift in Sources */,

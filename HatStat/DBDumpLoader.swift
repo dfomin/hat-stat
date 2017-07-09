@@ -22,6 +22,10 @@ class DBDumpLoader {
         return loadObjects(path: "/Users/dfomin/projects/hat-stat/users.json")
     }
     
+    static func loadPacks() -> [JSON] {
+        return loadObjects(path: "/Users/dfomin/projects/hat-stat/packs.json")
+    }
+    
     private static func loadObjects(path: String) -> [JSON] {
         let objects = DBDumpFileReader.readFile(filePath: path)
         var jsonObjects = [JSON]()
