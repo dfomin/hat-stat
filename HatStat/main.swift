@@ -212,7 +212,7 @@ func main() {
     
     //countPackUsage(games: games)
     
-    checkPackWords(games: Array(games.values), packs: packs)
+    //checkPackWords(games: Array(games.values), packs: packs)
 }
 
 main()
