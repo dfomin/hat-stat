@@ -65,8 +65,6 @@ func loadPacks() -> [Int: Pack] {
         
         let pack = Pack(json: jsonPack)
         packs[pack.id] = pack
-        
-        print(pack.id)
     }
     
     return packs
@@ -195,9 +193,9 @@ func checkPackWords(games: [Game], packs: [Int: Pack]) {
 }
 
 func main() {
-    let games = loadGames(allGames: true)
+    let games = loadGames(allGames: false)
     let users = loadUsers()
-    let packs = loadPacks()
+    //let packs = loadPacks()
     
     print("real games: \(games.count)")
     countUsers(users: users)
