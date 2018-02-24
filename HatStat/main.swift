@@ -80,7 +80,8 @@ func countWordStat(games: [String: Game]) {
     
     let wordStat = wordPopularity.wordsFor(pack: 0)
     for stat in wordStat {
-        print("\(stat.word): \(stat.count) \(stat.ids)")
+        //print("\(stat.word): \(stat.count) \(stat.ids)")
+        print("\(stat.word): \(stat.count)")
     }
 }
 
@@ -174,8 +175,27 @@ func countUsers(users: [User]) {
     for user in users {
         manager.add(user: user)
     }
-    
+
+    print("all logins: \(users.count)")
     print("users: \(manager.uniqueUsers)")
+
+    var loginStat = [Int: Int]()
+    for data in manager.users {
+        let count = data.value.count
+        if loginStat[count] != nil {
+            loginStat[count]! += 1
+        } else {
+            loginStat[count] = 1
+        }
+    }
+
+    print(">>>>> login stat")
+    
+    for (key, value) in loginStat.map({ return ($0, $1) }).sorted(by: { $0.0 < $1.0 }) {
+        print("\(key): \(value)")
+    }
+
+    print("<<<<< login stat")
 }
 
 func checkPackWords(games: [Game], packs: [Int: Pack]) {
@@ -190,6 +210,32 @@ func checkPackWords(games: [Game], packs: [Int: Pack]) {
             }
         }
     }
+}
+
+func countDeviceGames(games: [Game]) {
+    var devicesStat = [String: Int]()
+    for game in games {
+        if devicesStat[game.deviceId] != nil {
+            devicesStat[game.deviceId]! += 1
+        } else {
+            devicesStat[game.deviceId] = 1
+        }
+    }
+    
+    var gamesStat = [Int: Int]()
+    for (_, gamesCount) in devicesStat {
+        if gamesStat[gamesCount] != nil {
+            gamesStat[gamesCount]! += 1
+        } else {
+            gamesStat[gamesCount] = 1
+        }
+    }
+    
+    for (key, value) in gamesStat.map({ return ($0, $1) }).sorted(by: { $0.0 < $1.0 }) {
+        print("\(key): \(value)")
+    }
+    
+    print(gamesStat.values.reduce(0, +))
 }
 
 func main() {
@@ -211,6 +257,8 @@ func main() {
     //countPackUsage(games: games)
     
     //checkPackWords(games: Array(games.values), packs: packs)
+    
+    countDeviceGames(games: Array(games.values))
 }
 
 main()
